@@ -32,7 +32,9 @@ export default function Home() {
             visible={true}
           />
         </div>
-      ) : null}
+      ) : (
+        <div className=" h-"></div>
+      )}
     </div>
   );
 }
