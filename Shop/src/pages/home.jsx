@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { ColorRing } from "react-loader-spinner";
+import ProductTile from "../components/product-tile/index";
 
 export default function Home() {
   const [products, setProducts] = useState([]);
@@ -7,7 +8,7 @@ export default function Home() {
 
   async function fetchListOfProducts() {
     setLoading(true);
-    const res = await fetch("https://fakestore.com/api/products");
+    const res = await fetch("https://fakestoreapi.com/products");
     const data = await res.json();
 
     if (data) {
@@ -33,7 +34,13 @@ export default function Home() {
           />
         </div>
       ) : (
-        <div className=" h-"></div>
+        <div className="min-h-[80vh] grid sm:grid-cols-3 lg:grid-cols-4 max-w-6xl mx-auto p-3">
+          {products && products.length
+            ? products.map((productItem) => (
+                <ProductTile key={productItem.id} product={productItem} />
+              ))
+            : null}
+        </div>
       )}
     </div>
   );
