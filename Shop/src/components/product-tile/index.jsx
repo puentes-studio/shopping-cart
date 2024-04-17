@@ -10,7 +10,7 @@ export default function ProductTile({ product }) {
 
   return (
     <div>
-      <div className="group flex flex-col items-center border-2 border-gray-500 gap-3 p-4 h-[360px] mt-10 ml-5 rounded-xl">
+      <div className="group flex bg-white flex-col items-center border-2 border-gray-500 gap-3 p-4 h-[360px] mt-10 ml-5 rounded-xl">
         <div className="h-[180px]">
           <img
             src={product?.image}
@@ -27,7 +27,7 @@ export default function ProductTile({ product }) {
           <p className="text-gray-600 text-sm -mt-3 mb-1">$ {product?.price}</p>
           <button
             onClick={handleAddToCart}
-            className="bg-blue-950 text-white border-2 rounded-md font-bold p-4"
+            className="bg-cyan-500 hover:bg-cyan-600  text-white border-2 rounded-md font-bold px-4 py-1"
           >
             Add to cart
           </button>
