@@ -23,7 +23,8 @@ export default function ProductTile({ product }) {
             {product?.title}
           </h1>
         </div>
-        <div className="flex items-center justify-center w-full mt-5">
+        <div className="flex flex-col items-center justify-center w-full mt-5">
+          <p className="text-gray-600 text-sm -mt-3 mb-1">$ {product?.price}</p>
           <button
             onClick={handleAddToCart}
             className="bg-blue-950 text-white border-2 rounded-md font-bold p-4"
