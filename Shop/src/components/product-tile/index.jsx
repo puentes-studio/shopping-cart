@@ -3,7 +3,8 @@ import { addToCart, removeFromCart } from "../../store/slices/cart.slice";
 
 export default function ProductTile({ product }) {
   const dispatch = useDispatch();
-  const { cart } = useSelector((state) => state);
+  // const { cart } = useSelector((state) => state);
+  const cart = useSelector((state) => state.cart);
 
   function handleAddToCart() {
     dispatch(addToCart(product));
