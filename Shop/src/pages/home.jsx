@@ -27,8 +27,8 @@ export default function Home() {
       {loading ? (
         <div className="min-h-screen w-full flex justify-center items-center">
           <ColorRing
-            height={"120"}
-            width={"120"}
+            height={"100"}
+            width={"100"}
             color={"rgba(255,255,255,"}
             visible={true}
           />

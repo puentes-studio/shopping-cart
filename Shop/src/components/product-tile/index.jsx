@@ -17,7 +17,7 @@ export default function ProductTile({ product }) {
 
   return (
     <div>
-      <div className="group flex bg-white flex-col items-center border-2 border-gray-500 gap-3 p-4 h-[360px] mt-10 ml-5 rounded-xl">
+      <div className="group flex bg-white flex-col items-center border-1 border-gray-200 gap-3 p-4 h-[360px] mt-10 ml-5 rounded-xl">
         <div className="h-[180px]">
           <img
             src={product?.image}
@@ -26,7 +26,7 @@ export default function ProductTile({ product }) {
           />
         </div>
         <div>
-          <h1 className="w-40 truncate mt-3 text-gray-700 font-bold text-lg">
+          <h1 className="w-40 truncate mt-3 text-gray-700 font-bold text-m">
             {product?.title}
           </h1>
         </div>
