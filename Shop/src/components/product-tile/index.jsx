@@ -1,11 +1,17 @@
-import { useDispatch } from "react-redux";
-import { addToCart } from "../../store/slices/cart.slice";
+import { useDispatch, useSelector } from "react-redux";
+import { addToCart, removeFromCart } from "../../store/slices/cart.slice";
 
 export default function ProductTile({ product }) {
   const dispatch = useDispatch();
+  const { cart } = useSelector((state) => state);
 
   function handleAddToCart() {
     dispatch(addToCart(product));
+  }
+
+  function handleRemoveFromCart() {
+    dispatch(removeFromCart(product.id));
+    // console.log("removed");
   }
 
   return (
@@ -31,6 +37,16 @@ export default function ProductTile({ product }) {
           >
             Add to cart
           </button>
+          {cart.some((item) => item.id === product.id) && (
+            <button
+              onClick={handleRemoveFromCart}
+              className="text-gray-500 text-xs mt-1"
+            >
+              {cart.some((item) => item.id === product.id)
+                ? " Remove from cart"
+                : " "}
+            </button>
+          )}
         </div>
       </div>
     </div>
